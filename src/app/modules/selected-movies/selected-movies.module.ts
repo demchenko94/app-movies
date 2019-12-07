@@ -6,10 +6,6 @@ import { SharedModule } from '@modules/shared/shared.module';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    SelectedMoviesRoutingModule,
-    SharedModule
-  ]
+  imports: [CommonModule, SelectedMoviesRoutingModule, SharedModule]
 })
-export class SelectedMoviesModule { }
+export class SelectedMoviesModule {}
