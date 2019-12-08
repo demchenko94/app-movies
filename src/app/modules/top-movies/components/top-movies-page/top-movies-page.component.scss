@@ -1,0 +1,54 @@
+::ng-deep .ant-list-item {
+  background-color: #fff;
+  box-shadow: 6px 8px 13px -11px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  .item-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .left-info {
+    display: flex;
+    .info {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+
+      .title {
+        font-size: 2em;
+      }
+    }
+  }
+  .right-info {
+    display: flex;
+    padding-right: 50px;
+    .rating {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        font-size: 2em;
+      }
+    }
+  }
+  .select-mark {
+    position: absolute;
+    top: -5px;
+    right: 15px;
+    font-size: 2em;
+    i:hover {
+      cursor: pointer;
+    }
+    &.selected {
+      color: #cca40bad;
+    }
+  }
+
+}
+
+::ng-deep .ant-rate {
+  font-size: 11px;
+}
+
+
