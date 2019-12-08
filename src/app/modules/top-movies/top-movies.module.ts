@@ -4,8 +4,10 @@ import { CommonModule } from '@angular/common';
 import { TopMoviesRoutingModule } from './top-movies-routing.module';
 import { SharedModule } from '@modules/shared/shared.module';
 
+import { TopMoviesPageComponent } from '@modules/top-movies/components';
+
 @NgModule({
-  declarations: [],
+  declarations: [TopMoviesPageComponent],
   imports: [CommonModule, TopMoviesRoutingModule, SharedModule]
 })
 export class TopMoviesModule {}
