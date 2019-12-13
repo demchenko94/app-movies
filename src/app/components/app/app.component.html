@@ -1,13 +1,13 @@
 <nz-layout>
   <nz-header>
-    <div class="logo">
-      <i nz-icon nzType="cloud" nzTheme="outline"></i>
-      <span>movies</span>
+    <div class="logo" >
+        <i nz-icon nzType="cloud"  nzTheme="outline"></i>
+        <span>movies</span>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="horizontal">
-      <li nz-menu-item routerLink="/top-movies" routerLinkActive="active">Top movies</li>
-      <li nz-menu-item routerLink="/decades-movies" routerLinkActive="active">Decades movies</li>
-      <li nz-menu-item routerLink="/selected-movies" routerLinkActive="active">Selected movies</li>
+      <li nz-menu-item routerLink="/top-movies" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Top movies</li>
+      <li nz-menu-item routerLink="/decades-movies" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Decades movies</li>
+      <li nz-menu-item routerLink="/selected-movies" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Selected movies</li>
     </ul>
   </nz-header>
   <nz-content>

@@ -1,1 +1,5 @@
-<p>main-page works!</p>
+<nz-carousel nzAutoPlay>
+  <div nz-carousel-content *ngFor="let src of imagesSrc">
+    <img class="poster-movies" [src]="src" alt="">
+  </div>
+</nz-carousel>

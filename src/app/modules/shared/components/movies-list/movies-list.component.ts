@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { environment } from '@env/environment';
+import { Store } from '@ngrx/store';
+import { isLoading, loadSelectedMovies, selectMovie } from '@app/store/movies';
+import { AppState } from '@app/store';
 
 @Component({
   selector: 'app-movies-list',
@@ -6,27 +12,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movies-list.component.scss']
 })
 export class MoviesListComponent implements OnInit {
+  @Input() movies$;
+  isLoading$: Observable<boolean> = this.store.select(isLoading);
+  apiDirectorUrl = environment.api.urlDirector;
 
-  constructor() { }
-
-  data: any[] = [];
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-    this.loadData(1);
+    this.store.dispatch(loadSelectedMovies());
   }
 
-  loadData(pi: number): void {
-    this.data = new Array(5).fill({}).map((_, index) => {
-      return {
-        href: 'http://ant.design',
-        title: `ant design part ${index} (page: ${pi})`,
-        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-        content:
-          'We supply a series of design principles, practical patterns and high quality design resources ' +
-          '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-      };
-    });
+  selectMovie(idIMDB) {
+    this.store.dispatch(selectMovie({ movieId: idIMDB }));
   }
-
 }

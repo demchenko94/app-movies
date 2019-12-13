@@ -1,0 +1,13 @@
+<div class="quality-block">
+  <span><b>Quality: </b></span>
+  <div class="trailers-block">
+    <ng-container *ngFor="let item of (trailer$| async).qualities">
+      <button class="trailer-item" (click)="openModalVideo(item.videoURL)" nz-button nzType="default">
+        <i class="fa fa-film" aria-hidden="true"></i>
+        {{item.quality}}
+      </button>
+    </ng-container>
+  </div>
+</div>
+
+
