@@ -3,12 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '@env/environment';
 
-import {map, tap} from 'rxjs/operators';
-// import {BehaviorSubject, Subject} from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class MoviesService {
-  // isLoading = new BehaviorSubject(false);
   constructor(private http: HttpClient) {}
 
   getTopMovies() {

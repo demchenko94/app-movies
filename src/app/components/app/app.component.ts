@@ -1,8 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {AppState} from '@app/store';
-import {isLoading, loadMovies, loadTrailers} from '@app/store/movies';
-import {Observable} from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '@app/store';
+import { loadMovies, loadTrailers } from '@app/store/movies';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +10,7 @@ import {Observable} from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  title = 'app-movies';
   constructor(private store: Store<AppState>) {}
-  isLoading$: Observable<boolean> = this.store.select(isLoading);
 
   ngOnInit(): void {
     this.store.dispatch(loadMovies());

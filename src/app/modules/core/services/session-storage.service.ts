@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { from, of } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable()
 export class SessionStorageService {
